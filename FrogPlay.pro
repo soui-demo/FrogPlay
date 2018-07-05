@@ -6,17 +6,12 @@ TARGET = FrogPlay
 CONFIG(x64){
 TARGET = $$TARGET"64"
 }
-DEPENDPATH += .
-INCLUDEPATH += . \
-			   ../../utilities/include \
-			   ../../soui/include \
-			   ../../components \
-               ../../third-part \
-               ../../third-part/stdint \
-			   
-dir = ../..
-include($$dir/common.pri)
 
+include($$(SOUIPATH)/demo_com.pri)
+INCLUDEPATH += . \
+               $(SOUIPATH)/third-part \
+               $(SOUIPATH)/third-part/stdint \
+			   
 QMAKE_LIBDIR += $$dir/third-part/vlc/lib
 
 QMAKE_LFLAGS_RELEASE += /SAFESEH:NO
