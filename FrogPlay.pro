@@ -17,13 +17,9 @@ QMAKE_LIBDIR += $$dir/third-part/vlc/lib
 QMAKE_LFLAGS_RELEASE += /SAFESEH:NO
 QMAKE_LFLAGS_DEBUG += /SAFESEH:NO
 
-#system(xcopy ..\..\third-part\vlc\bin\ ..\..\bin\ /Y/E)
-#system(copy "..\..\third-part\vlc\bin\libvlccore.dll" "..\..\bin\libvlccore.dll")
 
 CONFIG(debug,debug|release){
-	LIBS += utilitiesd.lib souid.lib
-	#放这让它只运行一次，否则会运行两次
-	system(Xcopy "..\..\third-part\vlc\bin" "..\..\bin" /Y/E)
+	LIBS += utilitiesd.lib souid.lib	
 }
 else{
 	LIBS += utilities.lib soui.lib
@@ -44,7 +40,7 @@ HEADERS += AVPlayer.h \
            SouiRealWndHandler.h \
            TipWnd.h \
            taskbarlist3-i.h \
-           ../../controls.extend/SRadioBox2.h \
+           $(SOUIPATH)/controls.extend/SRadioBox2.h \
            resource.h \
            res/resource.h
            
@@ -55,6 +51,6 @@ SOURCES += AVPlayer.cpp \
            RealWndDlg.cpp \
            SouiRealWndHandler.cpp \
            TipWnd.cpp \
-           ../../controls.extend/SRadioBox2.cpp \
+           $(SOUIPATH)/controls.extend/SRadioBox2.cpp \
 
 RC_FILE += FrogPlay.rc
