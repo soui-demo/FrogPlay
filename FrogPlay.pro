@@ -12,7 +12,7 @@ INCLUDEPATH += . \
                $(SOUIPATH)/third-part \
                $(SOUIPATH)/third-part/stdint \
 			   
-QMAKE_LIBDIR += $$dir/third-part/vlc/lib
+QMAKE_LIBDIR += ./vlc/lib
 
 QMAKE_LFLAGS_RELEASE += /SAFESEH:NO
 QMAKE_LFLAGS_DEBUG += /SAFESEH:NO
