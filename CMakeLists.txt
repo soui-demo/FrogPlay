@@ -1,3 +1,6 @@
+#
+# 1394020320@qq.com
+#
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 
 include_directories(${PROJECT_SOURCE_DIR}/config)
@@ -7,7 +10,7 @@ include_directories(${PROJECT_SOURCE_DIR}/SOUI/include)
 include_directories(${PROJECT_SOURCE_DIR}/third-part)
 include_directories(${PROJECT_SOURCE_DIR}/third-part/stdint)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-link_directories(${PROJECT_SOURCE_DIR}/third-part/vlc/lib)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/vlc/lib)
 
 file(GLOB_RECURSE CURRENT_HEADERS  *.h *.hpp)
 file(GLOB_RECURSE CURRENT_SRCS  *.cpp)
